@@ -10,12 +10,7 @@ df.printSchema()
 
 val transdf = df.selectExpr("CAST(value AS STRING)")
 
-transdf.writeStream.format("console").outputMode("append").start()
-
-.show(100)
-
-
-.awaitTermination()
+transdf.writeStream.format("console").outputMode("append").start().awaitTermination()
 
 
 val trans_schema = new StructType().add("Transfer_Key",StringType).add("Account_Key",StringType).add("Transaction_Amount",IntegerType).add("Country",StringType).add("Transaction_Date",StringType)
