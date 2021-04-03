@@ -49,13 +49,16 @@
     
     val HRDF = finalwithCountriesDf.filter(entity_key is not null || \
     (sum(transaction_amt) > 1000 && transaction_type = 'INN') || (sum(transaction_amt) > 800 && transaction_type = 'OUT') ")\
+    || (count(transfer) > 20) \
     .withColumn("Risk_level",lit("HR"))
                          
     val MedDF = finalDf.filter("(sum(transaction_amt) > 600 & sum(transaction_amt) < 1000 && transaction_type = 'INN') || (sum(transaction_amt) > 500 && sum(transaction_amt)<800 && transaction_type = 'OUT') ")\
+      || (count(transfer) > 10) &&  count(transfer) < 20 ) \
     .withColumn("Risk_level",lit("MR"))    
 
     val lowDF = finalDf.filter("entity_key is null || \
-    (sum(transaction_amt) < 600 && transaction_type = 'INN') || (sum(transaction_amt) < 500 && transaction_type = 'OUT') ") .withColumn("Risk_level",lit("LR"))
+    (sum(transaction_amt) < 600 && transaction_type = 'INN') || (sum(transaction_amt) < 500 && transaction_type = 'OUT') ") \
+    || count(transfer) < 10) .withColumn("Risk_level",lit("LR"))
 
      val finalRiskDf = HRDF.union(MedDF).union(lowDF).withColumn("Risk_level",lit("LR"))
     
