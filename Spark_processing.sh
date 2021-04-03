@@ -48,18 +48,14 @@
     finalwithCountriesDf.cache()
     
     val HRDF = finalwithCountriesDf.filter(entity_key is not null || \
-    (sum(transaction_amt) > 1000 && transaction_type = 'IN') || (sum(transaction_amt) > 800 && transaction_type = 'OUT') ")\
+    (sum(transaction_amt) > 1000 && transaction_type = 'INN') || (sum(transaction_amt) > 800 && transaction_type = 'OUT') ")\
     .withColumn("Risk_level",lit("HR"))
                          
-    val MedDF = finalDf.filter("entity_key is null|| \
-    (sum(transaction_amt) > 1000 && transaction_type = 'IN') || (sum(transaction_amt) > 800 && transaction_type = 'OUT') ")\
+    val MedDF = finalDf.filter("(sum(transaction_amt) > 1000 && transaction_type = 'INN') || (sum(transaction_amt) > 800 && transaction_type = 'OUT') ")\
     .withColumn("Risk_level",lit("LR"))    
 
- 
-
-
     val lowDF = finalDf.filter("entity_key is null || \
-    (sum(transaction_amt) > 1000 && transaction_type = 'IN') || (sum(transaction_amt) > 800 && transaction_type = 'OUT') ")
+    (sum(transaction_amt) > 1000 && transaction_type = 'INN') || (sum(transaction_amt) > 800 && transaction_type = 'OUT') ")
     .withColumn("Risk_level",lit("LR"))
 
      val finalRiskDf = hrDF.union(medDF).union(lowDF).withColumn("Risk_level",lit("LR"))
