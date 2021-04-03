@@ -1,4 +1,4 @@
- val spark = SparkSession.builder.appName("proj - module").getOrCreate()  
+  val spark = SparkSession.builder.appName("proj - module").getOrCreate()  
     # Create a Spark Context
     val sc = spark.sparkContext
 
@@ -51,14 +51,13 @@
     (sum(transaction_amt) > 1000 && transaction_type = 'IN') || (sum(transaction_amt) > 800 && transaction_type = 'OUT') ")\
     .withColumn("Risk_level",lit("HR"))
                          
-    val MedDF = finalDf.filter("(customer_residential_country == 'PK' || customer_residential_country == 'AFG') || \
+    val MedDF = finalDf.filter("entity_key is null|| \
     (sum(transaction_amt) > 1000 && transaction_type = 'IN') || (sum(transaction_amt) > 800 && transaction_type = 'OUT') ")\
     .withColumn("Risk_level",lit("LR"))    
 
  
 
 
-    val lowDF = finalDf.filter("(customer_residential_country == 'PK' || customer_residential_country == 'AFG') || \
+    val lowDF = finalDf.filter("entity_key is null || \
     (sum(transaction_amt) > 1000 && transaction_type = 'IN') || (sum(transaction_amt) > 800 && transaction_type = 'OUT') ")
     .withColumn("Risk_level",lit("LR"))
-    
