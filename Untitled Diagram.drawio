@@ -1,0 +1,55 @@
+<mxfile host="app.diagrams.net" modified="2021-04-03T10:59:19.148Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36" etag="Xe3apYgMMHiXxsjlpwn4" version="14.5.6" type="github">
+  <diagram id="3YKS5hAJArZmH1cnRA6m" name="Page-1">
+    <mxGraphModel dx="1209" dy="663" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ugxK-Kp55vjIR1qKH1Q9-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="EfSdaL0TcR9g5Bu1C6k8-1" target="ugxK-Kp55vjIR1qKH1Q9-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EfSdaL0TcR9g5Bu1C6k8-1" value="Kafka Producer" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="150" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ugxK-Kp55vjIR1qKH1Q9-1" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px&quot;&gt;Customer Risk Rating&amp;nbsp;&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="30" width="170" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ugxK-Kp55vjIR1qKH1Q9-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ugxK-Kp55vjIR1qKH1Q9-2" target="ugxK-Kp55vjIR1qKH1Q9-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ugxK-Kp55vjIR1qKH1Q9-2" value="Kafka Brokers" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ugxK-Kp55vjIR1qKH1Q9-3" value="Spark DF" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ugxK-Kp55vjIR1qKH1Q9-4" value="Hive tables&amp;nbsp;&lt;br&gt;on HDFS&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ugxK-Kp55vjIR1qKH1Q9-12" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="ugxK-Kp55vjIR1qKH1Q9-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="710" y="200" as="sourcePoint" />
+            <mxPoint x="780" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ugxK-Kp55vjIR1qKH1Q9-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="ugxK-Kp55vjIR1qKH1Q9-17" target="ugxK-Kp55vjIR1qKH1Q9-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ugxK-Kp55vjIR1qKH1Q9-17" value="CRR Business Logic" style="shape=xor;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="170" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ugxK-Kp55vjIR1qKH1Q9-19" value="" style="endArrow=classic;html=1;entryX=0.191;entryY=0.594;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="ugxK-Kp55vjIR1qKH1Q9-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="670" y="320" as="sourcePoint" />
+            <mxPoint x="720" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ugxK-Kp55vjIR1qKH1Q9-20" value="" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="290" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ugxK-Kp55vjIR1qKH1Q9-21" value="Visualization" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="170" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
