@@ -62,6 +62,5 @@
     (sum(transaction_amt) > 1000 && transaction_type = 'IN') || (sum(transaction_amt) > 800 && transaction_type = 'OUT') ")
     .withColumn("Risk_level",lit("LR"))
 
-     val finalRiskDf = hrDF.union(medDF).union(lowDF)
-     
-     
+     val finalRiskDf = hrDF.union(medDF).union(lowDF).withColumn("Risk_level",lit("LR"))
+    
