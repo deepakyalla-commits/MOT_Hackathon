@@ -1,0 +1,33 @@
+High
+no. of txns mon - 10 HR
+sum in a month -IN>1000 
+sum in a month -OUT>800
+day --txns >20
+day -- txns > 250
+
+ 
+
+ 
+
+ 
+
+Med
+no. of txns mon - 6 HR/NH
+sum in a month -IN>600 & <1000
+sum in a month - OUT>500 & <800
+day -- txn >10 & < 20
+day --txn amt >100 & <250
+
+ 
+
+ 
+
+ 
+
+
+Low
+no. of txns mon - 10 NH
+sum in a month -IN<600
+sum in a month - OUT<500
+day -- txn <10
+day --txn amt < 100
